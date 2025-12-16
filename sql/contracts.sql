@@ -1,0 +1,11 @@
+-- Draft contract table (example for MSSQL)
+CREATE TABLE ContractDrafts (
+    Id UNIQUEIDENTIFIER PRIMARY KEY,
+    CustomerId NVARCHAR(100) NOT NULL,
+    Products NVARCHAR(MAX) NOT NULL,
+    Budget DECIMAL(18,2) NULL,
+    Suggestion NVARCHAR(MAX) NULL,
+    TenantId NVARCHAR(100) NULL,
+    Status NVARCHAR(50) NOT NULL DEFAULT 'PENDING_APPROVAL',
+    CreatedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME()
+);
